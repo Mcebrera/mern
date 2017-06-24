@@ -11,13 +11,29 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
-		loaders: [{
-			test: /.jsx?$/,
-			loader: 'babel-loader',
-			exclude: /node_modules/,
-			query: {
-				presets: ['es2015', 'react']
-			}
-		}]
+		rules: [
+			{
+				test: /.jsx?$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+				options: {
+					presets: ['es2015', 'react']
+				}
+			},
+			{
+        test: /\.css$/,
+        use: [
+          { 
+          	loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
+      }
+		]
 	}
 }

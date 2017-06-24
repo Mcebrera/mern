@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+var Game = require('./components/Game');
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <Game />,
+  document.getElementById('app')
+);
